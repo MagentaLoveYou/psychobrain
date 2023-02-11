@@ -1,91 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,900;1,800&family=Raleway:wght@400;500&display=swap');
 
 body {
-    background: url(https://wallup.net/wp-content/uploads/2019/09/679653-blade-and-soul-asian-martial-arts-action-fighting-1blades-online-mmo-rpg-beulleideu-aen-anime-fantasy-perfect.jpg) no-repeat;
-      -moz-background-size: 100%; /* Firefox 3.6+ */
-      -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-      -o-background-size: 100%; /* Opera 9.6+ */
-      background-size: 100%; /* Современные браузеры */
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins';
 }
 
 body {
     font-family: 'Poppins';
+    color: white;
 }
 
 header {
     display: flex;
     justify-content: center;
-}
-
-.container {
     width: 300px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    /* border: 5px solid white;
-    padding-top: 100px; */
-}
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    height: 400px;
-    border: 2px solid white;
-    padding: 10px;
-}
-
-.wrapper {
-    padding-top: 50px;
+    height: 500px;
     background-color: black;
 }
 
 .wrapper {
-    background: url(https://wallup.net/wp-content/uploads/2019/09/679653-blade-and-soul-asian-martial-arts-action-fighting-1blades-online-mmo-rpg-beulleideu-aen-anime-fantasy-perfect.jpg) no-repeat;
-      -moz-background-size: 100%; /* Firefox 3.6+ */
-      -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-      -o-background-size: 100%; /* Opera 9.6+ */
-      background-size: 100%; /* Современные браузеры */
-}
-.btn {
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px ;
-}
-
-button {
-    width: 80px;
-    height: 50px;
-}
-
-#prompt {
-    padding: 50px;
-    border-radius: 5px;
-    border: 2px solid white;
-    margin-bottom: 10px;
-}
-
-#prompt {
-    background-color: rgb(255, 255, 255);
-}
-
-.options {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15px;
-    color: aliceblue;
+    padding-top: 50px;
+}
+
+.main {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 200px;
+    height: 80px;
+    border: 2px solid red;
+}
+
+.btn {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.rep {
+    display: flex;
+    flex-direction: column;
 }
 
 .ctrl {
+    margin-top: 10px;
+    padding-top: 20px;
     display: flex;
-    align-items: center;
-    padding-top: 10px;
+    flex-direction: column;
 }
 
-#set-level-button {
-    width: 50px;
-    height: 30px;
+.options {
+    padding-top: 30px;
 }
+
+#prompt {
+    font-size: 30px;
+}
+
 
 
