@@ -48,7 +48,7 @@ $(document).ready(function() {
         repeat = true;
         check_flag = false;
         counter++;
-        if (previous[previous.length - (level + 1)] === previous[previous.length - 2] && repeat === true)  {  
+        if (previous[previous.length - (level + 1)] === previous[previous.length - 1] && repeat === true)  {  
           check_flag = true;
         };
     };
