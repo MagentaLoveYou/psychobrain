@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var items = ['PASSION', 'ETERNITY', 'LIBERTY'] //'TRANQUILITY', 'DESTINY', 'FANTASTIC']; 
+    var items = ['PASSION', 'ETERNITY', 'LIBERTY', 'TRANQUILITY', 'DESTINY', 'FANTASTIC', 'MYNAME', 'DELAY', 'METEOR', 'HAMMER']; 
     var previous = [];
     var correct = 0;
     var incorrect = 0;
@@ -8,14 +8,27 @@ $(document).ready(function() {
     randomIndex = 0;
     var delay = ( milliseconds ) => new Promise((resolve) => setTimeout(resolve, milliseconds));
     var flag = true;
-    var clck = 0;
     var counter = 0;
-    var repeat = true;
+    var repeat = false;
     var start_flag = true;
+    var check_flag = false;
     var sync = 0;
 
     function displayRandomItem() {
-        sync ++;
+        if (check_flag) {
+          incorrect++;
+          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
+        };
+        if (counter >= 20 + level*2) {
+          clearInterval(intervalId);
+          $("#prompt").text('');
+          $("#prompt").text('Finish!');
+          var percent = "Percent: " + String(correct / (correct + incorrect) * 100)
+          $("#score").text(percent);
+          counter = 0;
+          return
+        };
+        sync++;
         var randomIndex = Math.floor(Math.random() * items.length);
         var text = items[randomIndex];
         previous.push(items[randomIndex]);
@@ -25,25 +38,18 @@ $(document).ready(function() {
           return text.substring(start, end)
         };
         function type() {
-          var rnd = 200;
+          var rnd = 20;
           setTimeout(type, rnd);
           $("#prompt").append(character(count, count+1, text));
           count++;
         }
         type();
         flag = true;
-        if (previous[previous.length - (level + 1)] === previous[previous.length - 1] && repeat === true && clck === 0 )  {
-          incorrect++;
-          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
-        } else {
-            clck--;
-        };
+        repeat = true;
+        check_flag = false;
         counter++;
-        if (counter >= 2 + level*2) {
-          clearInterval(intervalId);
-          $("#prompt").text('');
-          $("#prompt").text('Nice!');
-          counter = 0;
+        if (previous[previous.length - (level + 1)] === previous[previous.length - 2] && repeat === true)  {  
+          check_flag = true;
         };
     };
 
@@ -53,13 +59,9 @@ $(document).ready(function() {
          } else {
            incorrect++
          };
-         if (clck === 0) {
-           clck++;
-         } else {
-           clck--;
-         };
          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
          flag = false;
+         check_flag = false
       };
    
   
@@ -73,9 +75,6 @@ $(document).ready(function() {
     $("#yes-button").click(function() {
       repeat = false;
       if (flag) {
-        if (clck === 0) {
-          clck++
-        };
         check();
       };
     });
