@@ -29,9 +29,15 @@ $(document).ready(function() {
           return
         };
         sync++;
+        
         var randomIndex = Math.floor(Math.random() * items.length);
-        var text = items[randomIndex];
-        previous.push(items[randomIndex]);
+        if (randomIndex === 1 || randomIndex === 2) {
+            var text = previous[previous.length - (level + 1)] ;
+            previous.push(items[randomIndex]);
+        } else {
+            var text = items[randomIndex];
+            previous.push(items[randomIndex]);
+        };
         var count = 0;
         $("#prompt").text('');
         function character(start, end, text) {
