@@ -17,12 +17,13 @@ $(document).ready(function() {
     function displayRandomItem() {
         if (check_flag) {
           incorrect++;
-          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
+//           $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
         };
         if (counter >= 20 + level*2) {
           clearInterval(intervalId);
           $("#prompt").text('');
           $("#prompt").text('Finish!');
+          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
           var percent = "Percent: " + String(correct / (correct + incorrect) * 100)
           $("#score").text(percent);
           counter = 0;
@@ -65,7 +66,7 @@ $(document).ready(function() {
          } else {
            incorrect++
          };
-         $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
+//          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
          flag = false;
          check_flag = false
       };
