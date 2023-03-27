@@ -23,7 +23,7 @@ $(document).ready(function() {
           clearInterval(intervalId);
           $("#prompt").text('');
           $("#prompt").text('Finish!');
-//           $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
+          $("#score").text("Correct: " + correct + " Incorrect: " + incorrect);
           var percent = "Percent: " + String(correct / (correct + incorrect) * 100)
           $("#score").text(percent);
           counter = 0;
