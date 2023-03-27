@@ -96,7 +96,7 @@ $(document).ready(function() {
       correct = 0;
       incorrect = 0;
       $("#prompt").text("");
-      $("#score").text("Correct: 0 Incorrect: 0");
+//       $("#score").text("Correct: 0 Incorrect: 0");
       start_flag = true;
     });
   
