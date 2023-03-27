@@ -31,7 +31,7 @@ $(document).ready(function() {
         sync++;
         
         var randomIndex = Math.floor(Math.random() * items.length);
-        if (randomIndex === 1 || randomIndex === 2) {
+        if (randomIndex === 1 || randomIndex === 3 || randomIndex === 5) {
             var text = previous[previous.length - (level + 1)] ;
             previous.push(items[randomIndex]);
         } else {
